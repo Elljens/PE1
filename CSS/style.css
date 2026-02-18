@@ -1,0 +1,81 @@
+body {
+    background-color: #F8F7F6;
+    height: 100%;
+}
+
+main {
+    font-family: comme;
+    margin-bottom: 50px;
+}
+
+header {
+    padding: 30px;
+    position: relative;
+}
+
+.logo {
+    width: 150px;
+    height: fit-content;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    font-family: dosis;
+}
+
+nav a {
+    text-decoration: none;
+    color: #355C7D;
+}
+
+li {
+    list-style: none;
+    display: inline;
+    padding: 10px;
+}
+
+.profile {
+    font-size: 30px;
+}
+
+.login-user {
+    font-size: 25px;
+}
+
+h1 {
+    font-family: dosis;
+    color:#355C7D;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+footer {
+    height: 300px;
+    color:#F8F7F6;
+    background-color: #355C7D;
+    margin-top: 150px;
+}
+
+@media (min-width: 700px) {
+
+    li {
+        padding: 15px;
+    }
+    
+    .profile {
+        font-size: 40px;
+    }
+
+    .login-user {
+        font-size: 30px;
+    }
+}
+
+
+

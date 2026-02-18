@@ -4,13 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="./CSS/style.css" rel="stylesheet" />
+    <link href="./CSS/index.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comme:wght@100..900&family=Dosis:wght@600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ec3d7ec6ab.js" crossorigin="anonymous"></script>
     <script type="module" src="./index.js"></script>
 </head>
 <body>
-    <h1>Blog posts</h1>
-    <a href="account/login.html">Login</a>
-    <a href="account/register.html">Register</a>
+    <header>
+        <nav>
+            <a href="index.html"><img src="./images/MOVE.png" class="logo" alt="move-logo"></a>
+            <ul>
+                <li><a href="account/login.html"><i class="fa-solid fa-user-pen fa-2x login-user"></i></a></li>
+            <li><a href="account/profile.html"><i class="fa-solid fa-circle-user fa-2x profile"></i></a></li>
+        </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="carousel"></div>
+        <div class="welcome-field">
+    <h1>Get your inspiration!</h1>
+    <p class="welcome-text">Welcome to our blog — your go-to resource for practical fitness advice, expert guidance, and real-world motivation.<br>
+        Whether you’re stepping into the gym for the first time or looking to take your training to the next level, this space is designed to support you. Here, you’ll find workout tips, strength and conditioning advice, nutrition insights, recovery strategies, and answers to the most common fitness questions.<br><br>
+        We believe fitness should feel achievable, empowering, and sustainable — not intimidating. That’s why our content focuses on realistic routines, smart training methods, and long-term results.<br>
+        Our goal isn’t just to help you work out. It’s to help you build strength, confidence, energy, and healthy habits that improve everyday life.<br><br>
+        Let’s get started!</p>
+        <a href="post/create.html" class="create"><i class="fa-solid fa-user-pen"></i> Create new post</a>
+    </div>
+
+
     <div id="blog-post-container"></div>
+
+    </main>
+    <footer>
+        <img src="images/MOVE.png">
+    </footer>
 
 </body>
 </html>

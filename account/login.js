@@ -1,8 +1,7 @@
+import { addToLocalStorage, BASE_URL } from "../utils.js"
 const loginForm = document.querySelector('#login-form');
 
 
-
-const BASE_URL = 'https://v2.api.noroff.dev';
 const Login_URL = `${BASE_URL}/auth/login`;
 
 async function loginUser(userDetails) {
@@ -17,7 +16,12 @@ async function loginUser(userDetails) {
         const response = await fetch(Login_URL, fetchOptions);
         const json = await response.json();
         const accessToken = json.data.accessToken;
+        const name = json.data.name;
+        addToLocalStorage('name', name);
         addToLocalStorage('accessToken', accessToken);
+
+        window.location.href = "./account/profile.html"
+
     } catch (error) {
     }
 }

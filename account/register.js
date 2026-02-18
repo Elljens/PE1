@@ -1,6 +1,7 @@
+import { BASE_URL } from "../utils.js"
 const registerForm = document.querySelector('#register-form');
 
-const BASE_URL = 'https://v2.api.noroff.dev';
+
 const Register_URL = `${BASE_URL}/auth/register`;
 
 async function registerUser(userDetails) {
@@ -13,6 +14,9 @@ async function registerUser(userDetails) {
             },
         };
         const response = await fetch(Register_URL, fetchOptions);
+
+        window.location.href = "./account/login.html"
+        
     } catch (error) {
 
     }
