@@ -21,7 +21,7 @@ async function loginUser(userDetails) {
         addToLocalStorage('accessToken', accessToken);
         addToLocalStorage('isLoggedIn', true);
 
-        window.location.href = "./profile.html"
+        window.location.href = "../index.html"
 
 
     } catch (error) {
