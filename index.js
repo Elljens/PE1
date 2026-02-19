@@ -1,4 +1,4 @@
-import { BASE_URL, accessToken, name, isLoggedIn } from "./utils.js";
+import { BASE_URL, accessToken, name, authToken, isLoggedIn } from "./utils.js";
 
 const BlogPost_URL = `${BASE_URL}/blog/posts/HenryDanger` && `${BASE_URL}/blog/posts/${name}`;
 const blogPostContainer = document.getElementById('blog-post-container');
@@ -9,7 +9,7 @@ let allPosts = [];
 async function fetchPosts() {
     const fetchOptions = {
         headers: {
-            Authorization: `Bearer ${accessToken}`,
+            Authorization: `Bearer ${accessToken}` && `Bearer ${authToken}`,
         },
     };
     try {
