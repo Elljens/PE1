@@ -1,4 +1,4 @@
-import { BASE_URL, accessToken, name } from "./utils.js";
+import { BASE_URL, accessToken, name, isLoggedIn } from "./utils.js";
 
 const BlogPost_URL = `${BASE_URL}/blog/posts/${name}`;
 const blogPostContainer = document.getElementById('blog-post-container');
@@ -164,4 +164,10 @@ async function main () {
 }
 
 main();
+
+const createNewBtn = document.querySelector('.create');
+
+if (!isLoggedIn) {
+    createNewBtn.classList.add('hidden');
+}
 

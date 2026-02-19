@@ -19,8 +19,10 @@ async function loginUser(userDetails) {
         const name = json.data.name;
         addToLocalStorage('name', name);
         addToLocalStorage('accessToken', accessToken);
+        addToLocalStorage('isLoggedIn', true);
 
-        window.location.href = "./account/profile.html"
+        window.location.href = "./profile.html"
+
 
     } catch (error) {
     }

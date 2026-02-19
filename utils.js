@@ -12,3 +12,4 @@ export const accessToken = getFromLocalStorage('accessToken');
 export const name = getFromLocalStorage('name');
 export const id = getFromLocalStorage('id');
 export const post = getFromLocalStorage('allPosts');
+export const isLoggedIn = getFromLocalStorage('isLoggedIn');

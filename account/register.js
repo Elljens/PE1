@@ -15,8 +15,8 @@ async function registerUser(userDetails) {
         };
         const response = await fetch(Register_URL, fetchOptions);
 
-        window.location.href = "./account/login.html"
-        
+        window.location.href = "./login.html"
+
     } catch (error) {
 
     }

@@ -1,4 +1,4 @@
-import { BASE_URL, name, accessToken } from "../utils.js"
+import { BASE_URL, name, accessToken, isLoggedIn } from "../utils.js"
 const blogPost = document.querySelector('#blogPost');
 
 const Post_URL = `${BASE_URL}/blog/posts/${name}`;
@@ -86,16 +86,14 @@ async function fetchPostDetail() {
             }
           });
 
+          if (!isLoggedIn) {
+            link.classList.add('hidden');
+        } 
+
     }catch(error) {
         blogPost.innerHTML = '<p>Could not load posts. Please try again later<P/>'
     }
-
-    
-
-
 };
-
-
 
 
     async function main () {
@@ -103,3 +101,6 @@ async function fetchPostDetail() {
     }
     
     main();
+
+
+ 

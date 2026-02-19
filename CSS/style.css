@@ -1,10 +1,10 @@
 body {
     background-color: #F8F7F6;
-    height: 100%;
+    min-height: 100vh;
 }
 
 main {
-    font-family: comme;
+    font-family: comme, Arial, Helvetica, sans-serif;
     margin-bottom: 50px;
 }
 
@@ -14,7 +14,7 @@ header {
 }
 
 .logo {
-    width: 150px;
+    width: 130px;
     height: fit-content;
 }
 
@@ -23,7 +23,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    font-family: dosis;
 }
 
 nav a {
@@ -31,22 +30,18 @@ nav a {
     color: #355C7D;
 }
 
+.user {
+    font-size: 20px;
+}
+
 li {
     list-style: none;
     display: inline;
-    padding: 10px;
-}
-
-.profile {
-    font-size: 30px;
-}
-
-.login-user {
-    font-size: 25px;
+    padding: 5px;
 }
 
 h1 {
-    font-family: dosis;
+    font-family: dosis, Verdana, Geneva, Tahoma, sans-serif;
     color:#355C7D;
     text-align: center;
 }
@@ -55,25 +50,77 @@ a {
     text-decoration: none;
 }
 
+.hidden {
+    display: none;
+}
+
 footer {
-    height: 300px;
+    height: 350px;
+    width: 100%;
+    margin: auto;
     color:#F8F7F6;
     background-color: #355C7D;
     margin-top: 150px;
+    font-family: dosis, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.top-footer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.footer-image {
+    width: 180px;
+    margin: auto;
+    padding: 20px;
+}
+
+.line {
+    background-color:#D7DDE2;;
+    height: 5px;
+    width: 100%;
+}
+
+.socials {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icons {
+    display: flex;
+    column-gap: 10px;
+}
+
+.main-footer {
+    display: flex;
+    align-items: last baseline;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 14px;
 }
 
 @media (min-width: 700px) {
 
+    .logo {
+        width: 150px;
+    }
+
     li {
         padding: 15px;
     }
-    
-    .profile {
-        font-size: 40px;
+
+    .user {
+        font-size: 30px;
     }
 
-    .login-user {
-        font-size: 30px;
+    .footer-image {
+        width: 200px;
+    }
+
+    .main-footer {
+        padding: 10px 50px;
     }
 }
 
