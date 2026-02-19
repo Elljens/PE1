@@ -1,6 +1,6 @@
 import { BASE_URL, accessToken, name, isLoggedIn } from "./utils.js";
 
-const BlogPost_URL = `${BASE_URL}/blog/posts/${name}`;
+const BlogPost_URL = `${BASE_URL}/blog/posts/HenryDanger` && `${BASE_URL}/blog/posts/${name}`;
 const blogPostContainer = document.getElementById('blog-post-container');
 const carousel = document.getElementById('carousel');
 
