@@ -1,6 +1,7 @@
 import { BASE_URL } from "../utils.js"
 const registerForm = document.querySelector('#register-form');
-
+const successBox = document.querySelector('.success-box');
+const failBox = document.querySelector('.fail-box');
 
 const Register_URL = `${BASE_URL}/auth/register`;
 
@@ -15,10 +16,15 @@ async function registerUser(userDetails) {
         };
         const response = await fetch(Register_URL, fetchOptions);
 
-        window.location.href = "./login.html"
+            if (response.ok) {
+                successBox.classList.add('active');
+        
+            } else {
+                failBox.classList.add('active');
+                
+            }
 
     } catch (error) {
-
     }
 }
 

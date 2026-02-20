@@ -1,24 +1,21 @@
 import { BASE_URL, name, accessToken, isLoggedIn } from "../utils.js"
 const blogPost = document.querySelector('#blogPost');
 
-const Post_URL = `${BASE_URL}/blog/posts/${name}`;
+const Post_URL = `${BASE_URL}/blog/posts/HenryDanger`;
 
 let post = [];
 
 async function fetchPostDetail() {
-    const options = {
-        headers: {
-            Authorization: `Bearer ${accessToken}`,
-        },
-    };
     try {
         const params = new URLSearchParams(window.location.search);
         const id = params.get('id');
 
-        const response = await fetch(`${Post_URL}/${id}`,options);
+        const response = await fetch(`${Post_URL}/${id}`);
         if (!response.ok) {
             throw new Error(`Error! Status: ${response.status}`);
         }
+
+
         const json = await response.json();
         post = json.data;
 
@@ -75,6 +72,10 @@ async function fetchPostDetail() {
         blogPost.appendChild(image);
         blogPost.appendChild(postPage);
 
+        if (!isLoggedIn) {
+            link.classList.add('hidden');
+        }
+
 
         urlCopy.addEventListener("click", async () => {
             try {
@@ -85,10 +86,6 @@ async function fetchPostDetail() {
               message.textContent = "Failed to copy";
             }
           });
-
-          if (!isLoggedIn) {
-            link.classList.add('hidden');
-        } 
 
     }catch(error) {
         blogPost.innerHTML = '<p>Could not load posts. Please try again later<P/>'
@@ -101,6 +98,8 @@ async function fetchPostDetail() {
     }
     
     main();
+
+
 
 
  

@@ -3,8 +3,6 @@ const loginForm = document.querySelector('#login-form');
 const successBox = document.querySelector('.success-box');
 const failBox = document.querySelector('.fail-box');
 
-console.log(failBox);
-
 const Login_URL = `${BASE_URL}/auth/login`;
 
 async function loginUser(userDetails) {

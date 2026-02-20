@@ -25,6 +25,7 @@
     <main>
         <h1>Create an account</h1>
         <p class="form-text">Please fill out the form to create a new account</p>
+    <div class="form-page">
     <form id="register-form">
         <label for="name">Name</label>
         <input id="name" name="name"/>
@@ -34,6 +35,17 @@
         <input id="password" name="password" type="password" />
         <button id="submit">Submit</button>
     </form>
+    <div class="success-box">
+        <i class="fa-solid fa-circle-check fa-3x"></i>
+        <p>New account created!<br>Please log in</p>
+        <a href="./login.html" class="home-btn">Log in</a>
+    </div>
+    <div class="fail-box">
+        <i class="fa-solid fa-circle-xmark fa-3x"></i>
+        <p>Something went wrong!<br>Please try again</p>
+        <a href="./register.html" class="home-btn">OK</a>
+    </div>
+</div>
     <p class="form-text">Are you already registered?<br>
     Please log in <a href="./login.html" class="redirect-link">here</a></P>
     </main>

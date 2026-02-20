@@ -68,6 +68,10 @@ h1 {
     color: #355C7D;
 }
 
+.hidden {
+    display: none;
+}
+
 
 
 @media (min-width: 700px) {

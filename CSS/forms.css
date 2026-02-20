@@ -5,10 +5,10 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    max-width: 315px;
+    max-width: 300px;
     margin: auto;
     background-color: #D7DDE2;
-    padding: 40px;
+    padding: 30px;
     border-radius: 20px;
     border: 0.5px solid #355C7D;
 }
@@ -102,7 +102,6 @@ h1 {
 
 .fail-box.active {
     background-color: #f67280;
-    border-color: black;
 }
 
 .success-box,
