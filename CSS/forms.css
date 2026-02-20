@@ -2,6 +2,7 @@
 #create-post,
 #login-form,
 #register-form {
+    position: relative;
     display: flex;
     flex-direction: column;
     max-width: 315px;
@@ -75,6 +76,45 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.form-page {
+    position: relative;
+}
+
+.success-box.active,
+.fail-box.active {
+    display:block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #355C7D;
+    color:white;
+    text-align: center;
+    padding: 20px;
+    width:200px;
+    border-radius: 10px;
+    margin: auto;
+    transition: 0,5s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,1);
+}
+
+.fail-box.active {
+    background-color: #f67280;
+    border-color: black;
+}
+
+.success-box,
+.fail-box {
+    display: none;
+}
+
+.home-btn {
+    background-color: white;
+    color:#355C7D;
+    padding: 5px 15px;
+    border-radius: 10px;
 }
 
 

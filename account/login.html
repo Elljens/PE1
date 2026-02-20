@@ -25,6 +25,7 @@
     <main>
         <h1>Log in</h1>
         <p class="form-text">Please fill out the form to log on to your account</p>
+        <div class="form-page">
     <form id="login-form">
         <label for="email">Email</label>
         <input id="email" name="email" type="email" />
@@ -32,8 +33,20 @@
         <input id="password" name="password" type="password" />
         <button id="submit">Log in</button>
     </form>
+    <div class="success-box">
+        <i class="fa-solid fa-circle-check fa-3x"></i>
+        <p>You are logged in!</p>
+        <a href="../index.html" class="home-btn">Home</a>
+    </div>
+    <div class="fail-box">
+        <i class="fa-solid fa-circle-xmark fa-3x"></i>
+        <p>Something went wrong!<br>Please try again</p>
+        <a href="./login.html" class="home-btn">OK</a>
+    </div>
+</div>
     <p class="form-text">Not registered?<br>
     Please create a new account <a href="./register.html" class="redirect-link">here</a></p>
+
     </main>
     <footer>
         <section class="top-footer">

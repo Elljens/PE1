@@ -1,17 +1,19 @@
-import { BASE_URL, accessToken, name, authToken, isLoggedIn } from "./utils.js";
+import { BASE_URL, accessToken, name, isLoggedIn } from "./utils.js";
 
-const BlogPost_URL = `${BASE_URL}/blog/posts/HenryDanger` || `${BASE_URL}/blog/posts/${name}`;
+const BlogPost_URL = `${BASE_URL}/blog/posts/${name}`;
 const blogPostContainer = document.getElementById('blog-post-container');
 const carousel = document.getElementById('carousel');
 
 let allPosts = [];
 
 async function fetchPosts() {
-    const fetchOptions = {
-        headers: {
-            Authorization: `Bearer ${accessToken}` || `Bearer ${authToken}`,
-        },
-    };
+    const fetchOptions = {};
+    if (isLoggedIn && accessToken) {
+        fetchOptions.headers = {
+            Authorization: `Bearer ${accessToken}`,
+        };
+    }
+
     try {
         const response = await fetch(BlogPost_URL, fetchOptions);
         if (!response.ok) {

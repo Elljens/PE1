@@ -1,6 +1,9 @@
-import { addToLocalStorage, BASE_URL } from "../utils.js"
+import { addToLocalStorage, BASE_URL, isLoggedIn } from "../utils.js"
 const loginForm = document.querySelector('#login-form');
+const successBox = document.querySelector('.success-box');
+const failBox = document.querySelector('.fail-box');
 
+console.log(failBox);
 
 const Login_URL = `${BASE_URL}/auth/login`;
 
@@ -13,16 +16,27 @@ async function loginUser(userDetails) {
                 'Content-type': 'application/json',
             },
         };
+
         const response = await fetch(Login_URL, fetchOptions);
         const json = await response.json();
+
+    if (response.ok) {
         const accessToken = json.data.accessToken;
         const name = json.data.name;
+        const isLoggedIn = response.ok;
+
         addToLocalStorage('name', name);
         addToLocalStorage('accessToken', accessToken);
-        addToLocalStorage('isLoggedIn', true);
+        addToLocalStorage('isLoggedIn', isLoggedIn);
 
-        window.location.href = "../index.html"
+        successBox.classList.add('active');
 
+        console.log(json);
+        console.log(response);
+
+    } else {
+        failBox.classList.add('active');
+    }
 
     } catch (error) {
     }
