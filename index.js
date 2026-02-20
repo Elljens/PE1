@@ -1,4 +1,4 @@
-import { BASE_URL, accessToken, name, isLoggedIn, authToken } from "./utils.js";
+import { BASE_URL, accessToken, name, isLoggedIn, authToken, addToLocalStorage } from "./utils.js";
 
 const BlogPost_URL = `${BASE_URL}/blog/posts/HenryDanger`;
 const NewPost_URL = `${BASE_URL}/blog/posts/${name}`;
@@ -24,6 +24,7 @@ async function fetchPosts() {
         console.log(json);
 
         allPosts = json.data;
+        addToLocalStorage('allPosts', JSON.stringify(json));
 
     }catch(error) {
         blogPostContainer.innerHTML = '<p>Could not load posts. Please try again later<P/>'
@@ -47,11 +48,14 @@ async function fetchNewPosts() {
         console.log(json);
 
         allPosts = json.data;
+        addToLocalStorage('allPosts', JSON.stringify(json));
 
     }catch(error) {
         blogPostContainer.innerHTML = '<p>Could not load posts. Please try again later<P/>'
     }
 };
+
+console.log(allPosts);
 
 function renderPosts(postsToRender) {
     blogPostContainer.innerHTML = '';
