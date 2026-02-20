@@ -1,24 +1,18 @@
 import { BASE_URL, accessToken, name, isLoggedIn, authToken } from "./utils.js";
 
-const BlogPost_URL = `${BASE_URL}/blog/posts/HenryDanger` && `${BASE_URL}/blog/posts/${name}`;
+const BlogPost_URL = `${BASE_URL}/blog/posts/HenryDanger`;
+const NewPost_URL = `${BASE_URL}/blog/posts/${name}`;
 const blogPostContainer = document.getElementById('blog-post-container');
 const carousel = document.getElementById('carousel');
 
 let allPosts = [];
 
 async function fetchPosts() {
-    const fetchOptions = {};
-    if (isLoggedIn && authToken) {
-        fetchOptions.headers = {
+    const fetchOptions = {
+        headers: {
             Authorization: `Bearer ${authToken}`,
-        };
-    }
-
-    if (isLoggedIn && accessToken) {
-        fetchOptions.headers = {
-            Authorization: `Bearer ${accessToken}`,
-        };
-    }
+        },
+    };
 
     try {
         const response = await fetch(BlogPost_URL, fetchOptions);
@@ -31,7 +25,28 @@ async function fetchPosts() {
 
         allPosts = json.data;
 
-        localStorage.setItem('allPosts', JSON.stringify(json));
+    }catch(error) {
+        blogPostContainer.innerHTML = '<p>Could not load posts. Please try again later<P/>'
+    }
+};
+
+async function fetchNewPosts() {
+    const Options = {
+        headers: {
+            Authorization: `Bearer ${accessToken}`,
+        },
+    };
+
+    try {
+        const response = await fetch(NewPost_URL, Options);
+        if (!response.ok) {
+            throw new Error(`Error! Status: ${response.status}`);
+        }
+        const json = await response.json();
+        console.log(response);
+        console.log(json);
+
+        allPosts = json.data;
 
     }catch(error) {
         blogPostContainer.innerHTML = '<p>Could not load posts. Please try again later<P/>'
@@ -163,6 +178,7 @@ function renderCarousel(posts) {
 
 async function main () {
     await fetchPosts();
+    await fetchNewPosts();
 
     const firstThreePosts = allPosts.slice(0, 3);
     const indexPosts = allPosts.slice(3);
