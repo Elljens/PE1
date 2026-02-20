@@ -1,5 +1,7 @@
 import { BASE_URL, accessToken, name, isLoggedIn, authToken, addToLocalStorage } from "./utils.js";
 
+console.log(authToken);
+
 const BlogPost_URL = `${BASE_URL}/blog/posts/HenryDanger`;
 const NewPost_URL = `${BASE_URL}/blog/posts/${name}`;
 const blogPostContainer = document.getElementById('blog-post-container');
@@ -48,14 +50,16 @@ async function fetchNewPosts() {
         console.log(json);
 
         allPosts = json.data;
-        addToLocalStorage('allPosts', JSON.stringify(json));
+        localStorage.setItem('allPosts', JSON.stringify(json));
+
+        console.log(allPosts);
 
     }catch(error) {
         blogPostContainer.innerHTML = '<p>Could not load posts. Please try again later<P/>'
     }
 };
 
-console.log(allPosts);
+
 
 function renderPosts(postsToRender) {
     blogPostContainer.innerHTML = '';
@@ -182,7 +186,11 @@ function renderCarousel(posts) {
 
 async function main () {
     await fetchPosts();
-    await fetchNewPosts();
+
+    if (isLoggedIn) {
+        await fetchNewPosts();
+    }
+    
 
     const firstThreePosts = allPosts.slice(0, 3);
     const indexPosts = allPosts.slice(3);
