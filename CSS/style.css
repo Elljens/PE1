@@ -34,6 +34,10 @@ nav a {
     font-size: 20px;
 }
 
+.header-text {
+    display: none;
+}
+
 li {
     list-style: none;
     display: inline;
@@ -61,7 +65,7 @@ footer {
     color:#F8F7F6;
     background-color: #355C7D;
     margin-top: 150px;
-    font-family: dosis, Verdana, Geneva, Tahoma, sans-serif;
+    font-family: comme, Arial, Helvetica, sans-serif;
 }
 
 .top-footer {
@@ -113,6 +117,13 @@ footer {
 
     .user {
         font-size: 30px;
+    }
+
+    .header-text {
+        display: inline;
+        font-family: dosis, Verdana, Geneva, Tahoma, sans-serif ;
+        font-size: 24px;
+        padding: 10px;
     }
 
     .footer-image {
