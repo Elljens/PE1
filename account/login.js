@@ -1,4 +1,4 @@
-import { addToLocalStorage, BASE_URL, isLoggedIn } from "../utils.js"
+import { addToLocalStorage, BASE_URL } from "../utils.js"
 const loginForm = document.querySelector('#login-form');
 const successBox = document.querySelector('.success-box');
 const failBox = document.querySelector('.fail-box');
@@ -28,9 +28,6 @@ async function loginUser(userDetails) {
         addToLocalStorage('isLoggedIn', isLoggedIn);
 
         successBox.classList.add('active');
-
-        console.log(json);
-        console.log(response);
 
     } else {
         failBox.classList.add('active');

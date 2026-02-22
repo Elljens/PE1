@@ -31,7 +31,7 @@ nav a {
 }
 
 .user {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .header-text {
@@ -116,13 +116,13 @@ footer {
     }
 
     .user {
-        font-size: 30px;
+        font-size: 25px;
     }
 
     .header-text {
         display: inline;
         font-family: dosis, Verdana, Geneva, Tahoma, sans-serif ;
-        font-size: 24px;
+        font-size: 20px;
         padding: 10px;
     }
 

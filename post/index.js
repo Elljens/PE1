@@ -1,4 +1,4 @@
-import { BASE_URL, name, accessToken, isLoggedIn } from "../utils.js"
+import { BASE_URL, isLoggedIn } from "../utils.js"
 const blogPost = document.querySelector('#blogPost');
 
 const Post_URL = `${BASE_URL}/blog/posts/HenryDanger`;
@@ -29,7 +29,7 @@ async function fetchPostDetail() {
 
         const urlCopy = document.createElement('button');
         urlCopy.classList.add('url-link');
-        urlCopy.innerHTML = '<i class="fa-sharp fa-solid fa-share-nodes"></i> Copy URL';
+        urlCopy.innerHTML = '<i class="fa-sharp fa-solid fa-share-nodes"></i> Share post';
 
         const message = document.createElement('span');
         message.classList.add('message');

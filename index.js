@@ -9,7 +9,7 @@ let allPosts = [];
 async function fetchPosts() {
     try {
         const response = await fetch(
-            `${BASE_URL}/blog/posts/HenryDanger?_author=true`
+            `${BASE_URL}/blog/posts/HenryDanger`
         );
 
         if (!response.ok) {
