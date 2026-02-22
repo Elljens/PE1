@@ -2,6 +2,8 @@ import { addToLocalStorage, BASE_URL } from "../utils.js"
 const loginForm = document.querySelector('#login-form');
 const successBox = document.querySelector('.success-box');
 const failBox = document.querySelector('.fail-box');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
 
 const Login_URL = `${BASE_URL}/auth/login`;
 
@@ -40,6 +42,17 @@ async function loginUser(userDetails) {
 
 function submittingForm(event) {
     event.preventDefault();
+
+    const emailValue = emailInput.value.trim();
+    const passwordValue = passwordInput.value.trim()
+
+    if(emailValue === '') {
+        alert('Email field cannot be empty!')
+    }
+
+    if(passwordValue === '') {
+        alert('Password field cannot be empty!')
+    }
 
     const formData = new FormData(event.target);
     const formFields = Object.fromEntries(formData);
